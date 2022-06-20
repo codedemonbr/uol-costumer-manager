@@ -6,6 +6,10 @@ export const Container = styled.div`
     background: var(--darker);
     height: 4rem;
 
+    @media (max-width: 640px) {
+        height: 5.5rem;
+    }
+
     img {
         resize: both;
         width: 100%;
