@@ -10,28 +10,25 @@ import { customerStatus } from "../../constants/customerStatus";
 import { ICustomerDTO } from "../../dtos/ICustomerDTO";
 import { useCustomers } from "../../hooks/useCustomers";
 import { useToast } from "../../hooks/useToast";
-import { db } from "../../services/db";
 import { validateCPF } from "../../utils/CPFValidator";
 import maskCPF from "../../utils/maskCPF";
 import maskPhone from "../../utils/maskPhone";
 import { nameValidate } from "../../utils/nameValidate";
 import { BtnContent, Container, FormContainer } from "./styles";
 
-const Editor: React.FC = () => {
-    const label = "Editar";
-    const title = "Editar usuário";
-    const subtitle = "Informe os campos a seguir para editar o usuário:";
+const Creator: React.FC = () => {
+    const label = "Criar";
+    const title = "Novo usuário";
+    const subtitle = "Informe os campos a seguir para criar novo usuário:";
 
     let navigate = useNavigate();
 
-    const [isTooShortName, setIsTooShortName] = useState(false);
+    const [isTooShortName, setIsTooShortName] = useState(true);
     const [selectStatus, setSelectStatus] = useState("select");
-    const [isValidEmail, setIsValidEmail] = useState(true);
-    const [isUncompletedPhone, setIsUncompletedPhone] = useState(false);
+    const [isValidEmail, setIsValidEmail] = useState(false);
+    const [isUncompletedPhone, setIsUncompletedPhone] = useState(true);
     const [isCpfValid, setIsCpfValid] = useState(false);
     const [lockSubmit, setLockSubmit] = useState(true);
-
-    const [customer, setCustomer] = useState<ICustomerDTO>({} as ICustomerDTO);
 
     const { createCustomer } = useCustomers();
     const { toastConfig } = useToast();
@@ -40,16 +37,7 @@ const Editor: React.FC = () => {
 
     const formRef = useRef<FormHandles>(null);
 
-    const handleGetExistingUser = useCallback(async (id: string) => {
-        try {
-            const res = await db.customers.get(id);
-            if (res) {
-                setCustomer(res);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }, []);
+    const handleGetExistingUser = useCallback(async (id: string) => {}, []);
 
     const handleSubmitForm = (data: ICustomerDTO) => {
         const obj: ICustomerDTO = {
@@ -57,8 +45,7 @@ const Editor: React.FC = () => {
             status: selectStatus,
         };
 
-        console.log("editar");
-        console.log(obj);
+        createCustomer(obj);
     };
 
     useEffect(() => {
@@ -95,24 +82,9 @@ const Editor: React.FC = () => {
     useEffect(() => {
         if (!!id) {
             formRef.current?.setFieldValue("id", id);
-
             handleGetExistingUser(id);
         }
     }, [handleGetExistingUser, id]);
-
-    /** This useEffect is used to recovery saved data */
-    useEffect(() => {
-        const nome = formRef.current?.getFieldValue("name");
-
-        if (!!customer.name && !nome) {
-            formRef.current?.setFieldValue("name", customer.name);
-            formRef.current?.setFieldValue("email", customer.email);
-            formRef.current?.setFieldValue("phone", customer.phone);
-            formRef.current?.setFieldValue("id", customer.id);
-            console.log(customer);
-            setIsCpfValid(validateCPF(customer.id));
-        }
-    }, [customer, customer.email, customer.id, customer.name, customer.phone]);
 
     return (
         <Container>
@@ -214,4 +186,4 @@ const Editor: React.FC = () => {
     );
 };
 
-export { Editor };
+export { Creator };

@@ -17,7 +17,6 @@ interface CustomersProviderProps {
 
 interface ICustomersContextData {
     customers: ICustomerDTO[];
-
     createCustomer: (customer: ICustomerDTO) => Promise<void>;
     editCustomer: (customer: ICustomerDTO) => Promise<void>;
 }
@@ -168,7 +167,11 @@ export function CustomersProvider({ children }: CustomersProviderProps) {
 
     return (
         <CustomersContext.Provider
-            value={{ customers, createCustomer, editCustomer }}
+            value={{
+                customers,
+                createCustomer,
+                editCustomer,
+            }}
         >
             {children}
         </CustomersContext.Provider>
