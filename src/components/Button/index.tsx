@@ -8,13 +8,20 @@ interface Props {
 
 type ButtonProps = JSX.IntrinsicElements["button"] & Props;
 
-const Button: React.FC<ButtonProps> = ({ isOutline = false, label, type }) => {
+const Button: React.FC<ButtonProps> = ({
+    isOutline = false,
+    label,
+    type,
+    disabled,
+}) => {
     return (
         <Container>
             {isOutline ? (
                 <BtnOutline type={type}>{label}</BtnOutline>
             ) : (
-                <Btn type={type}>{label}</Btn>
+                <Btn type={type} disabled={disabled}>
+                    {label}
+                </Btn>
             )}
         </Container>
     );

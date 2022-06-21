@@ -26,5 +26,8 @@ export const Container = styled.div`
     }
 
     span {
+        margin-left: 0.5rem;
+
+        color: var(--attention);
     }
 `;

@@ -1,4 +1,5 @@
 export const customerStatus = [
+    { status: "select", label: "Selecione o status" },
     {
         status: "active",
         label: "Ativo",

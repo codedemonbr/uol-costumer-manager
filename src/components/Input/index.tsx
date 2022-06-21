@@ -9,7 +9,7 @@ interface Props {
 
 type InputProps = JSX.IntrinsicElements["input"] & Props;
 
-export default function Input({ name, label, ...rest }: InputProps) {
+export default function Input({ name, label, disabled, ...rest }: InputProps) {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const { fieldName, defaultValue, registerField, error } = useField(name);
@@ -38,10 +38,11 @@ export default function Input({ name, label, ...rest }: InputProps) {
                 id={fieldName}
                 ref={inputRef}
                 defaultValue={defaultValue}
+                disabled={disabled}
                 {...rest}
             />
 
-            {error && <span>{error}</span>}
+            {error && <span> * {error}</span>}
         </Container>
     );
 }

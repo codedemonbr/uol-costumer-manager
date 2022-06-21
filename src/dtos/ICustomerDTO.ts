@@ -3,5 +3,6 @@ export interface ICustomerDTO {
     name: string;
     email: string;
     phone: string;
-    status: "active" | "inactive" | "waiting" | "disabled";
+    // status: "active" | "inactive" | "waiting" | "disabled" | "select";
+    status: string;
 }

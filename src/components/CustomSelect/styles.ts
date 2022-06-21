@@ -20,7 +20,11 @@ export const Container = styled.div`
         option {
             font-size: 1.1rem;
             font-weight: 600;
-            
         }
+    }
+    span {
+        margin-left: 0.5rem;
+
+        color: var(--attention);
     }
 `;
