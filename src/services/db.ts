@@ -3,7 +3,7 @@ import Dexie, { Table } from "dexie";
 import { ICustomerDTO } from "../dtos/ICustomerDTO";
 
 export class CustomerDexie extends Dexie {
-    // 'friends' is added by dexie when declaring the stores()
+    // 'customers' is added by dexie when declaring the stores()
     // We just tell the typing system this is the case
     customers!: Table<ICustomerDTO>;
 

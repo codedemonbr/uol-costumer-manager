@@ -17,7 +17,6 @@ export const Container = styled.div`
 export const LeftContent = styled.div`
     display: flex;
     flex: 1;
-    /* border: 0.1rem solid red; */
 
     flex-direction: column;
 
@@ -34,7 +33,7 @@ export const LeftContent = styled.div`
 export const RightContent = styled.div`
     display: flex;
     flex: 1;
-    /* border: 0.1rem solid blue; */
+
     align-items: center;
     justify-content: flex-end;
     button {

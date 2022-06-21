@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-    margin: 3rem 1rem;
+    margin: 2rem 1rem;
     border: 0.1rem solid var(--primary);
     padding: 1.5rem;
 `;
@@ -32,16 +32,15 @@ export const RightContent = styled.div``;
 
 export const NameEmailContent = styled.div`
     ${commonStyle};
-    margin-left: 6rem;
+    margin-left: 2rem;
     @media (max-width: 640px) {
         margin-left: 0;
     }
-    /* border: 0.1rem solid red; */
 `;
 
 export const CpfNumberContent = styled.div`
     ${commonStyle};
-    /* border: 0.1rem solid blue; */
+
     @media (max-width: 640px) {
         margin-top: 1rem;
     }
@@ -85,7 +84,7 @@ export const StatusContent = styled.div`
 
 export const ButtonContent = styled.div`
     display: flex;
-    /* flex-direction: column; */
+
     align-items: center;
 
     @media (max-width: 640px) {
@@ -107,5 +106,4 @@ export const ButtonContent = styled.div`
     button:hover {
         filter: brightness(0.9);
     }
-    /* border: 0.1rem solid purple; */
 `;

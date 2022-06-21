@@ -155,9 +155,31 @@ export function CustomersProvider({ children }: CustomersProviderProps) {
         [getCustomers, setToastConfig]
     );
 
-    const editCustomer = useCallback(async (customer: ICustomerDTO) => {
-        console.log("verificar se o customer id existe e editar os campos");
-    }, []);
+    const editCustomer = useCallback(
+        async (customer: ICustomerDTO) => {
+            try {
+                await db.customers.put(customer);
+
+                setToastConfig({
+                    message: `Cliente editado com sucesso!`,
+                    option: "success",
+                    trigger: true,
+                });
+                getCustomers()
+            } catch (error) {
+                setToastConfig({
+                    //@ts-ignore
+                    message: error?.message
+                        ? //@ts-ignore
+                          error?.message
+                        : "Por favor tente novamente mais tarde",
+                    option: "error",
+                    trigger: true,
+                });
+            }
+        },
+        [getCustomers, setToastConfig]
+    );
 
     useEffect(() => {
         if (!customers.length) {

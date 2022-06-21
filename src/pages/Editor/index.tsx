@@ -33,7 +33,7 @@ const Editor: React.FC = () => {
 
     const [customer, setCustomer] = useState<ICustomerDTO>({} as ICustomerDTO);
 
-    const { createCustomer } = useCustomers();
+    const { editCustomer } = useCustomers();
     const { toastConfig } = useToast();
 
     let { id } = useParams();
@@ -57,13 +57,12 @@ const Editor: React.FC = () => {
             status: selectStatus,
         };
 
-        console.log("editar");
-        console.log(obj);
+        editCustomer(obj);
     };
 
     useEffect(() => {
         if (
-            toastConfig.message === "Cliente adicionado com sucesso!" &&
+            toastConfig.message === "Cliente editado com sucesso!" &&
             !!toastConfig.trigger
         ) {
             navigate("/", { replace: true });
@@ -109,7 +108,7 @@ const Editor: React.FC = () => {
             formRef.current?.setFieldValue("email", customer.email);
             formRef.current?.setFieldValue("phone", customer.phone);
             formRef.current?.setFieldValue("id", customer.id);
-            console.log(customer);
+
             setIsCpfValid(validateCPF(customer.id));
         }
     }, [customer, customer.email, customer.id, customer.name, customer.phone]);
