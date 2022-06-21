@@ -12,7 +12,9 @@ export const Container = styled.div`
     @media (max-width: 640px) {
         padding: 3rem 0 2rem 0;
     }
-
+    @media (min-width: 1080px) {
+        margin: 1rem 13rem;
+    }
     h1 {
         margin-left: 1rem;
         font-weight: 500;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LeftContent, RightContent } from "./styles";
+import { Container, LeftContent, Redirect, RightContent } from "./styles";
 
 interface CustomerHandlerProps {
     title: string;
@@ -20,7 +20,11 @@ const CustomerHandler: React.FC<CustomerHandlerProps> = ({
             </LeftContent>
 
             <RightContent>
-                {isCreate && <button>Novo cliente</button>}
+                {isCreate && (
+                    <Redirect to={"create"}>
+                        <button>Novo cliente</button>
+                    </Redirect>
+                )}
             </RightContent>
         </Container>
     );

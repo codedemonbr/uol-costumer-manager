@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { Link } from "react-router-dom";
+import { ICustomerDTO } from "../../dtos/ICustomerDTO";
 
 import {
     ButtonContent,
@@ -9,25 +11,47 @@ import {
     StatusContent,
 } from "./styles";
 
-const Customer: React.FC = () => {
+const Customer: React.FC<ICustomerDTO> = ({
+    name,
+    email,
+    id,
+    phone,
+    status,
+}) => {
+    const getLabelByStatus = useCallback((status: string): string => {
+        switch (status) {
+            case "active":
+                return "Ativo";
+            case "inactive":
+                return "Inativo";
+            case "waiting":
+                return "Aguardando ativação";
+            case "disabled":
+            default:
+                return "Desativado";
+        }
+    }, []);
+
     return (
         <Container>
             <LeftContent>
                 <NameEmailContent>
-                    <h4>Camila Souza</h4>
-                    <p>camila.souza@gmail.com</p>
+                    <h4>{name}</h4>
+                    <p>{email}</p>
                 </NameEmailContent>
                 <CpfNumberContent>
-                    <h4>512.512.512-66</h4>
-                    <p>(11) 98603-6845</p>
+                    <h4>{id}</h4>
+                    <p>{phone}</p>
                 </CpfNumberContent>
                 <StatusContent>
-                    <div></div>
-                    <p>Ativo</p>
+                    <div className={status}></div>
+                    <p>{getLabelByStatus(status)}</p>
                 </StatusContent>
             </LeftContent>
             <ButtonContent>
-                <button>Editar</button>
+                <Link to={`edit/${id}`}>
+                    <button>Editar</button>
+                </Link>
             </ButtonContent>
         </Container>
     );

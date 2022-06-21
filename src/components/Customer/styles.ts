@@ -69,6 +69,18 @@ export const StatusContent = styled.div`
 
         background-color: green;
     }
+
+    .inactive {
+        background-color: red;
+    }
+
+    .waiting {
+        background-color: #d3a710;
+    }
+
+    .disabled {
+        background-color: var(--primary);
+    }
 `;
 
 export const ButtonContent = styled.div`
