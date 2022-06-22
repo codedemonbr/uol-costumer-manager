@@ -15,7 +15,7 @@ import { validateCPF } from "../../utils/CPFValidator";
 import maskCPF from "../../utils/maskCPF";
 import maskPhone from "../../utils/maskPhone";
 import { nameValidate } from "../../utils/nameValidate";
-import { BtnContent, Container, FormContainer } from "./styles";
+import { BtnContent, Container, FormContainer, Redirect } from "./styles";
 
 const Editor: React.FC = () => {
     const label = "Editar";
@@ -206,7 +206,9 @@ const Editor: React.FC = () => {
 
                 <BtnContent>
                     <Button label={label} type="submit" disabled={lockSubmit} />
-                    <Button label="Voltar" isOutline />
+                    <Redirect to="/">
+                        <Button label="Voltar" isOutline />
+                    </Redirect>
                 </BtnContent>
             </FormContainer>
         </Container>

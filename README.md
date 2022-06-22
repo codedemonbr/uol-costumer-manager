@@ -1,46 +1,137 @@
-# Getting Started with Create React App
+<h1  align="center">
+UOL - Frontend Teste
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</h1>
 
-## Available Scripts
+<p  align="center">
 
-In the project directory, you can run:
+<img  alt="GitHub top language"  src="https://img.shields.io/github/languages/top/codedemonbr/uol-costumer-manager">
 
-### `npm start`
+<img  alt="GitHub language count"  src="https://img.shields.io/github/languages/count/codedemonbr/uol-costumer-manager">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a  href="https://www.codacy.com/gh/codedemonbr/uol-costumer-manager/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codedemonbr/uol-costumer-manager&amp;utm_campaign=Badge_Grade">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img  src="https://app.codacy.com/project/badge/Grade/1f8b30a499ce412f98fa085a579998f5"/>
 
-### `npm test`
+</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img  alt="Repository size"  src="https://img.shields.io/github/repo-size/codedemonbr/uol-costumer-manager">
 
-### `npm run build`
+<a  href="https://github.com/codedemonbr/uol-costumer-manager/commits/master">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img  alt="GitHub last commit"  src="https://img.shields.io/github/last-commit/codedemonbr/uol-costumer-manager">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a  href="https://github.com/codedemonbr/uol-costumer-manager/issues">
 
-### `npm run eject`
+<img  alt="Repository issues"  src="https://img.shields.io/github/issues/codedemonbr/uol-costumer-manager">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+</a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img  alt="License"  src="https://img.shields.io/github/license/codedemonbr/uol-costumer-manager">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- Index -->
 
-## Learn More
+<p  >
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a  href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a  href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+<a  href="#card_index-my-contacts">My Contacts</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+<a  href="#memo-License">License</a>
+
+</p>
+
+## :rocket: Technologies
+
+This project was developed as a challenge and I used the bellow technologies:
+
+-   [React](https://pt-br.reactjs.org/)
+
+-   [Styled Components](https://styled-components.com/);
+
+-   [Axios](https://axios-http.com/)
+
+-   [Typescript](https://www.typescriptlang.org/)
+
+-   [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+
+-   [Commitzen](https://yarnpkg.com/package/commitizen)
+
+-   [cpf-cnpj-validator](https://www.npmjs.com/package/cpf-cnpj-validator)
+
+-   [Unform](https://unform-rocketseat.vercel.app/quick-start/)
+
+-   [React Icons](https://www.npmjs.com/package/react-icons)
+
+-   [React Toastify](https://www.npmjs.com/package/react-toastify)
+
+## :information_source: How to use
+
+First of all, clone this repository.
+
+Then run the following command:
+
+```bash
+
+yarn install && yarn start
+
+OR
+
+npm install && npm start
+
+
+```
+
+## Dashboard
+
+<p align="center">
+  <img alt="Inicial" src="https://res.cloudinary.com/codedemonbr/image/upload/v1655858390/Teste%20UOL/PaginaInicial_dc4bod.gif">
+</p>
+## Criação de Usuário
+<p align="center">
+  <img alt="Criacao" src="https://res.cloudinary.com/codedemonbr/image/upload/v1655858390/Teste%20UOL/CriandoUsuario_iyb1sq.gif">
+</p>
+## Edição de usuário
+<p align="center">
+  <img alt="Edicao" src="https://res.cloudinary.com/codedemonbr/image/upload/v1655858390/Teste%20UOL/Editar_Usu%C3%A1rio_tv7655.gif">
+</p>
+
+## :card_index: My contacts
+
+```json
+{
+    "name": "Thiago Henrique dos Santos",
+
+    "email": "codedemonbr@pm.me",
+
+    "github": "https://github.com/codedemonbr",
+
+    "linkedin": "www.linkedin.com/in/codedemonbr",
+
+    "phones": [
+        {
+            "sp_phone": "+5511986082341"
+        },
+
+        {
+            "ba_phone": "+5571997115946"
+        }
+    ]
+}
+```
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](https://github.com/codedemonbr/uol-costumer-manager/blob/master/LICENSE) for more information.
+
+---
+
+Made with inner :fire: by Thiago Henrique dos Santos :wave: [Get in touch!](www.linkedin.com/in/codedemonbr)
+
+[nodejs]: https://nodejs.org/

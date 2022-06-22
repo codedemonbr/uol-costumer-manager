@@ -1,4 +1,5 @@
 import { Form } from "@unform/web";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -16,4 +17,9 @@ export const BtnContent = styled.div`
     @media (max-width: 640px) {
         flex-direction: column;
     }
+`;
+
+
+export const Redirect = styled(Link)`
+    text-decoration: none;
 `;
